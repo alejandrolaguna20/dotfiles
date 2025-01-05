@@ -142,6 +142,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+	"tpope/vim-markdown",
 
 	-- NOTE: Plugins can also be added by using a table,
 	-- with the first argument being the link and the following
@@ -153,7 +154,21 @@ require("lazy").setup({
 	-- Here is a more advanced example where we pass configuration
 	-- options to `gitsigns.nvim`. This is equivalent to the following Lua:
 	--    require('gitsigns').setup({ ... })
-
+	{
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup({
+				"*", -- Apply to all files
+				css = { rgb_fn = true }, -- Enable `rgb()` functions for CSS
+				html = { mode = "foreground" }, -- Use foreground mode for HTML
+			})
+		end,
+	},
+	"xiyaowong/transparent.nvim",
+	{
+		"renerocksai/telekasten.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+	},
 	{
 		"andweeb/presence.nvim",
 		opts = {
@@ -771,19 +786,22 @@ require("lazy").setup({
 
 	-- Lua with Lazy.nvim:
 	{
-		"Mofiqul/adwaita.nvim",
+		"alejandrolaguna20/noctis.nvim",
 		lazy = false,
 		priority = 1000,
-
-		-- configure and set on startup
 		config = function()
-			vim.g.adwaita_darker = false -- for darker version
-			vim.g.adwaita_disable_cursorline = false -- to disable cursorline
-			vim.g.adwaita_transparent = false -- makes the background transparent
-			vim.cmd("colorscheme adwaita")
+			require("noctis").setup({
+				-- leave this setup function empty for default config
+				-- or refer to the configuration section
+				-- for configuration options
+			})
+		end,
+
+		-- optionally set the colorscheme within lazy config
+		init = function()
+			vim.cmd("colorscheme noctis")
 		end,
 	},
-
 	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",
@@ -936,6 +954,9 @@ require("pets").setup({
 			-- doesn't work for you then set this to true and the popup will use hl and will be spawned above the statusline (hopefully)
 		},
 	},
+})
+require("telekasten").setup({
+	home = vim.fn.expand("~/notes"), -- Put the name of your notes directory here
 })
 
 -- Default options:
