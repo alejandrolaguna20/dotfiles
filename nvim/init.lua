@@ -3,6 +3,7 @@ vim.g.maplocalleader = " "
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
+vim.opt.termguicolors = true
 
 vim.opt.colorcolumn = "80"
 -- [[ Setting options ]]
@@ -61,6 +62,8 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 -- Preview substitutions live, as you type!
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
@@ -792,17 +795,12 @@ require("lazy").setup({
 		config = function()
 			require("noctis").setup({
 				-- leave this setup function empty for default config
+				vim.cmd("colorscheme noctis"),
 				-- or refer to the configuration section
 				-- for configuration options
 			})
 		end,
-
-		-- optionally set the colorscheme within lazy config
-		init = function()
-			vim.cmd("colorscheme noctis")
-		end,
 	},
-	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",
 		event = "VimEnter",
