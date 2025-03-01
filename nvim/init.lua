@@ -789,17 +789,9 @@ require("lazy").setup({
 
 	-- Lua with Lazy.nvim:
 	{
-		"alejandrolaguna20/noctis.nvim",
+		"nyoom-engineering/oxocarbon.nvim", -- Everforest plugin
 		lazy = false,
-		priority = 1000,
-		config = function()
-			require("noctis").setup({
-				-- leave this setup function empty for default config
-				vim.cmd("colorscheme noctis"),
-				-- or refer to the configuration section
-				-- for configuration options
-			})
-		end,
+		priority = 1000, -- Load before other plugins
 	},
 	{
 		"folke/todo-comments.nvim",
@@ -956,6 +948,8 @@ require("pets").setup({
 require("telekasten").setup({
 	home = vim.fn.expand("~/notes"), -- Put the name of your notes directory here
 })
+
+vim.cmd("colorscheme oxocarbon")
 
 -- Default options:
 -- The line beneath this is called `modeline`. See `:help modeline`
