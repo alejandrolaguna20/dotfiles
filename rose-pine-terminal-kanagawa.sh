@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROFILE_NAME="kanagawa"
+PROFILE_NAME="rose-pine"
 
 EXISTING_PROFILES=$(gsettings get org.gnome.Terminal.ProfilesList list)
 # generate new UUID
@@ -18,16 +18,16 @@ dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/use-system-font "fal
 
 dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/audible-bell "false"
 
-dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/background-color "'#121214'"
-dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/foreground-color "'#dcd7ba'"
+dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/background-color "'#000000'"
+dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/foreground-color "'#e0def4'"
 dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/cursor-colors-set "true"
-dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/cursor-background-color "'#dcd7ba'"
-dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/cursor-foreground-color "'#121214'"
+dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/cursor-background-color "'#e0def4'"
+dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/cursor-foreground-color "'#000000'"
 dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/use-theme-colors "false"
 
 dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/palette "[
-'#16161d', '#c34043', '#76946a', '#c0a36e', '#7e9cd8', '#957fb8', '#6a9589', '#dcd7ba',
-'#223249', '#c34043', '#76946a', '#c0a36e', '#7e9cd8', '#957fb8', '#6a9589', '#d27e99'
+'#191724', '#eb6f92', '#31748f', '#f6c177', '#9ccfd8', '#c4a7e7', '#ebbcba', '#e0def4',
+'#6e6a86', '#eb6f92', '#31748f', '#f6c177', '#9ccfd8', '#c4a7e7', '#ebbcba', '#e0def4'
 ]"
 
 echo "GNOME Terminal profile '$PROFILE_NAME' created and applied! Reset your terminal, just in case :)"

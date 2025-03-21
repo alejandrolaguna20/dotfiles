@@ -53,7 +53,7 @@ require("lazy").setup({
 	{ import = "plugins.lsp" },
 	{ import = "plugins.conform" },
 	{ import = "plugins.cmp" },
-	{ import = "plugins.kanagawa" },
+	{ import = "plugins.colorscheme" },
 	{ import = "plugins.todo_comments" },
 	{ import = "plugins.mini" },
 	{ import = "plugins.treesitter" },

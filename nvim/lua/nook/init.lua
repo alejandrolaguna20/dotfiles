@@ -1,11 +1,13 @@
 local M = {}
 
-function M.setup()
-	vim.api.nvim_create_user_command("NookHello", function()
-		print("Hello from Nook!")
-	end, {})
+M.commands = require("nook.commands")
+M.file = require("nook.file")
+M.highlight = require("nook.highlight")
 
-	print("Nook is loaded!")
+function M.setup()
+	M.file.setup()
+	M.highlight.setup()
+	M.commands.setup()
 end
 
 return M
