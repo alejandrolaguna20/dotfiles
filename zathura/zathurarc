@@ -1,48 +1,50 @@
-# Kanagawa color theme for Zathura
-# Based on the Kanagawa color palette
+# Rose Pine color theme for Zathura
+# Based on the Rose Pine color palette
+
 set window-title-basename "true"
 set selection-clipboard "clipboard"
 
-# Base colors from Kanagawa palette
-set notification-error-bg       "#E82424"     # samuraiRed
-set notification-error-fg       "#DCD7BA"     # fujiWhite
-set notification-warning-bg     "#FF9E3B"     # roninYellow
-set notification-warning-fg     "#1F1F28"     # sumiInk3
-set notification-bg             "#1F1F28"     # sumiInk3
-set notification-fg             "#DCD7BA"     # fujiWhite
+# Base colors from Rose Pine palette
+set notification-error-bg       "#eb6f92"     # love
+set notification-error-fg       "#e0def4"     # text
+set notification-warning-bg     "#f6c177"     # gold
+set notification-warning-fg     "#000000"     # base
+set notification-bg             "#000000"     # base
+set notification-fg             "#e0def4"     # text
 
-set completion-bg               "#1F1F28"     # sumiInk3
-set completion-fg               "#727169"     # fujiGray
-set completion-group-bg         "#2A2A37"     # sumiInk4
-set completion-group-fg         "#727169"     # fujiGray
-set completion-highlight-bg     "#223249"     # waveBlue1
-set completion-highlight-fg     "#DCD7BA"     # fujiWhite
+set completion-bg               "#000000"     # base
+set completion-fg               "#908caa"     # muted
+set completion-group-bg         "#1f1d2e"     # surface
+set completion-group-fg         "#908caa"     # muted
+set completion-highlight-bg     "#31748f"     # pine
+set completion-highlight-fg     "#e0def4"     # text
 
-set index-bg                    "#1F1F28"     # sumiInk3
-set index-fg                    "#DCD7BA"     # fujiWhite
-set index-active-bg             "#223249"     # waveBlue1
-set index-active-fg             "#DCD7BA"     # fujiWhite
+set index-bg                    "#000000"     # base
+set index-fg                    "#e0def4"     # text
+set index-active-bg             "#31748f"     # pine
+set index-active-fg             "#e0def4"     # text
 
-set inputbar-bg                 "#1F1F28"     # sumiInk3
-set inputbar-fg                 "#DCD7BA"     # fujiWhite
+set inputbar-bg                 "#000000"     # base
+set inputbar-fg                 "#e0def4"     # text
 
-set statusbar-bg                "#1F1F28"     # sumiInk3
-set statusbar-fg                "#DCD7BA"     # fujiWhite
+set statusbar-bg                "#000000"     # base
+set statusbar-fg                "#e0def4"     # text
 
-set highlight-color             "#DCA561"     # autumnYellow (50% transparent)
-set highlight-active-color      "#957FB8"     # oniViolet (50% transparent)
+set highlight-color             "#f6c177"     # gold (50% transparent)
+set highlight-active-color      "#c4a7e7"     # iris (50% transparent)
 
-set default-bg                  "#16161D"     # sumiInk3
-set default-fg                  "#DCD7BA"     # fujiWhite
+set default-bg                  "#000000"     # base
+set default-fg                  "#e0def4"     # text
 
 set render-loading              true
-set render-loading-bg           "#1F1F28"     # sumiInk3
-set render-loading-fg           "#DCD7BA"     # fujiWhite
+set render-loading-bg           "#000000"     # base
+set render-loading-fg           "#e0def4"     # text
 
 # Recolor mode settings
-set recolor-lightcolor          "#1F1F28"     # sumiInk3 (Background)
-set recolor-darkcolor           "#DCD7BA"     # fujiWhite (Foreground)
+set recolor-lightcolor          "#000000"     # base (Background)
+set recolor-darkcolor           "#e0def4"     # text (Foreground)
 
 # Startup options
 set adjust-open width
 set recolor true
+
