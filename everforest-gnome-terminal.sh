@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROFILE_NAME="rose-pine"
+PROFILE_NAME="everforest"
 
 EXISTING_PROFILES=$(gsettings get org.gnome.Terminal.ProfilesList list)
 # generate new UUID
@@ -19,15 +19,15 @@ dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/use-system-font "fal
 dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/audible-bell "false"
 
 dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/background-color "'#000000'"
-dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/foreground-color "'#e0def4'"
+dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/foreground-color "'#d3c6aa'"
 dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/cursor-colors-set "true"
-dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/cursor-background-color "'#e0def4'"
-dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/cursor-foreground-color "'#000000'"
+dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/cursor-background-color "'#000000'"
+dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/cursor-foreground-color "'#2d353b'"
 dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/use-theme-colors "false"
 
 dconf write /org/gnome/terminal/legacy/profiles:/:$NEW_UUID/palette "[
-'#191724', '#eb6f92', '#31748f', '#f6c177', '#9ccfd8', '#c4a7e7', '#ebbcba', '#e0def4',
-'#6e6a86', '#eb6f92', '#31748f', '#f6c177', '#9ccfd8', '#c4a7e7', '#ebbcba', '#e0def4'
+'#2d353b', '#e67e80', '#a7c080', '#dbbc7f', '#7fbbb3', '#d699b6', '#83c092', '#d3c6aa',
+'#475258', '#e67e80', '#a7c080', '#dbbc7f', '#7fbbb3', '#d699b6', '#83c092', '#d3c6aa'
 ]"
 
 echo "GNOME Terminal profile '$PROFILE_NAME' created and applied! Reset your terminal, just in case :)"
