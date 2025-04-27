@@ -1,13 +1,8 @@
-M = {}
+local M = {}
+M.syntax = require("nook.highlight.syntax")
 
 function M.setup()
-	vim.api.nvim_create_autocmd("BufReadPost", {
-		pattern = "nook.txt",
-		callback = function()
-			vim.cmd("highlight NookTodo ctermfg=Yellow guifg=#FFFF00")
-			vim.fn.matchadd("NookTodo", "TODO")
-		end,
-	})
+	M.syntax.setup()
 end
 
 return M

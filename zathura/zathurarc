@@ -1,50 +1,43 @@
-# Rose Pine color theme for Zathura
-# Based on the Rose Pine color palette
-
 set window-title-basename "true"
 set selection-clipboard "clipboard"
 
-# Base colors from Rose Pine palette
-set notification-error-bg       "#eb6f92"     # love
-set notification-error-fg       "#e0def4"     # text
-set notification-warning-bg     "#f6c177"     # gold
-set notification-warning-fg     "#000000"     # base
-set notification-bg             "#000000"     # base
-set notification-fg             "#e0def4"     # text
+set notification-error-bg       "#df6882"     # error (red)
+set notification-error-fg       "#cdcdcd"     # fg (text)
+set notification-warning-bg     "#f3be7c"     # warning (yellow)
+set notification-warning-fg     "#141415"     # bg (base)
+set notification-bg             "#141415"     # bg (base)
+set notification-fg             "#cdcdcd"     # fg (text)
 
-set completion-bg               "#000000"     # base
-set completion-fg               "#908caa"     # muted
-set completion-group-bg         "#1f1d2e"     # surface
-set completion-group-fg         "#908caa"     # muted
-set completion-highlight-bg     "#31748f"     # pine
-set completion-highlight-fg     "#e0def4"     # text
+set completion-bg               "#141415"     # bg (base)
+set completion-fg               "#878787"     # floatBorder (muted)
+set completion-group-bg         "#252530"     # line (surface)
+set completion-group-fg         "#878787"     # floatBorder (muted)
+set completion-highlight-bg     "#8cb66d"     # plus (green)
+set completion-highlight-fg     "#cdcdcd"     # fg (text)
 
-set index-bg                    "#000000"     # base
-set index-fg                    "#e0def4"     # text
-set index-active-bg             "#31748f"     # pine
-set index-active-fg             "#e0def4"     # text
+set index-bg                    "#141415"     # bg (base)
+set index-fg                    "#cdcdcd"     # fg (text)
+set index-active-bg             "#7e98e8"     # hint (blue)
+set index-active-fg             "#cdcdcd"     # fg (text)
 
-set inputbar-bg                 "#000000"     # base
-set inputbar-fg                 "#e0def4"     # text
+set inputbar-bg                 "#141415"     # bg (base)
+set inputbar-fg                 "#cdcdcd"     # fg (text)
 
-set statusbar-bg                "#000000"     # base
-set statusbar-fg                "#e0def4"     # text
+set statusbar-bg                "#141415"     # bg (base)
+set statusbar-fg                "#cdcdcd"     # fg (text)
 
-set highlight-color             "#f6c177"     # gold (50% transparent)
-set highlight-active-color      "#c4a7e7"     # iris (50% transparent)
+set highlight-color             "#f3be7c"     # warning (yellow)
+set highlight-active-color      "#8cb66d"     # plus (green)
 
-set default-bg                  "#000000"     # base
-set default-fg                  "#e0def4"     # text
+set default-bg                  "#141415"     # bg (base)
+set default-fg                  "#cdcdcd"     # fg (text)
 
 set render-loading              true
-set render-loading-bg           "#000000"     # base
-set render-loading-fg           "#e0def4"     # text
+set render-loading-bg           "#141415"     # bg (base)
+set render-loading-fg           "#cdcdcd"     # fg (text)
 
-# Recolor mode settings
-set recolor-lightcolor          "#000000"     # base (Background)
-set recolor-darkcolor           "#e0def4"     # text (Foreground)
+set recolor-lightcolor          "#141415"     # bg (Background)
+set recolor-darkcolor           "#cdcdcd"     # fg (Foreground)
 
-# Startup options
 set adjust-open width
 set recolor true
-

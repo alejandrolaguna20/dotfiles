@@ -11,4 +11,4 @@ require("plugins")
 require("notes")
 
 -- Set colorscheme
-vim.cmd("colorscheme everforest")
+vim.cmd("colorscheme vague")

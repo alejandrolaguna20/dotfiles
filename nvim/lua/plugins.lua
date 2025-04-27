@@ -57,6 +57,7 @@ require("lazy").setup({
 	{ import = "plugins.todo_comments" },
 	{ import = "plugins.mini" },
 	{ import = "plugins.treesitter" },
+	{ import = "plugins.startup" },
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {
