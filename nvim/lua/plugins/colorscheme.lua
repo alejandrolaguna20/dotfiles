@@ -5,8 +5,6 @@ return {
 		require("vague").setup({
 			transparent = false, -- don't set background
 			style = {
-				-- "none" is the same thing as default. But "italic" and "bold" are also valid options
-				boolean = "bold",
 				number = "none",
 				float = "none",
 				error = "bold",
@@ -18,21 +16,17 @@ return {
 				strings = "none",
 				variables = "none",
 
-				-- keywords
 				keywords = "none",
 				keyword_return = "bold",
 				keywords_loop = "none",
 				keywords_label = "none",
 				keywords_exception = "none",
 
-				-- builtin
 				builtin_constants = "bold",
 				builtin_functions = "none",
 				builtin_types = "bold",
 				builtin_variables = "none",
 			},
-			-- plugin styles where applicable
-			-- make an issue/pr if you'd like to see more styling options!
 			plugins = {
 				cmp = {
 					match = "bold",
@@ -55,7 +49,6 @@ return {
 					match = "bold",
 				},
 			},
-			-- Override colors
 			colors = {
 				bg = "#141415",
 				fg = "#cdcdcd",

@@ -1,4 +1,3 @@
--- Todo-comments configuration
 return {
 	"folke/todo-comments.nvim",
 	event = "VimEnter",

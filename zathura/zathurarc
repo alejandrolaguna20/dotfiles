@@ -1,43 +1,37 @@
 set window-title-basename "true"
 set selection-clipboard "clipboard"
 
-set notification-error-bg       "#df6882"     # error (red)
-set notification-error-fg       "#cdcdcd"     # fg (text)
-set notification-warning-bg     "#f3be7c"     # warning (yellow)
-set notification-warning-fg     "#141415"     # bg (base)
-set notification-bg             "#141415"     # bg (base)
-set notification-fg             "#cdcdcd"     # fg (text)
+set notification-error-bg "#d8647e"
+set notification-error-fg "#cdcdcd"
+set notification-warning-bg "#f3be7c"
+set notification-warning-fg "#252530"
+set notification-bg "#141415"
+set notification-fg "#cdcdcd"
 
-set completion-bg               "#141415"     # bg (base)
-set completion-fg               "#878787"     # floatBorder (muted)
-set completion-group-bg         "#252530"     # line (surface)
-set completion-group-fg         "#878787"     # floatBorder (muted)
-set completion-highlight-bg     "#8cb66d"     # plus (green)
-set completion-highlight-fg     "#cdcdcd"     # fg (text)
+set completion-bg "#252530"
+set completion-fg "#cdcdcd"
+set completion-group-bg "#252530"
+set completion-group-fg "#7fa563"
+set completion-highlight-bg "#606079"
+set completion-highlight-fg "#cdcdcd"
 
-set index-bg                    "#141415"     # bg (base)
-set index-fg                    "#cdcdcd"     # fg (text)
-set index-active-bg             "#7e98e8"     # hint (blue)
-set index-active-fg             "#cdcdcd"     # fg (text)
+set inputbar-bg "#141415"
+set inputbar-fg "#cdcdcd"
 
-set inputbar-bg                 "#141415"     # bg (base)
-set inputbar-fg                 "#cdcdcd"     # fg (text)
+set statusbar-bg "#252530"
+set statusbar-fg "#cdcdcd"
 
-set statusbar-bg                "#141415"     # bg (base)
-set statusbar-fg                "#cdcdcd"     # fg (text)
+set highlight-color "#f3be7c"
+set highlight-active-color "#bb9dbd"
 
-set highlight-color             "#f3be7c"     # warning (yellow)
-set highlight-active-color      "#8cb66d"     # plus (green)
+set index-bg "#141415"
+set index-fg "#cdcdcd"
+set index-active-bg "#606079"
+set index-active-fg "#cdcdcd"
 
-set default-bg                  "#141415"     # bg (base)
-set default-fg                  "#cdcdcd"     # fg (text)
-
-set render-loading              true
-set render-loading-bg           "#141415"     # bg (base)
-set render-loading-fg           "#cdcdcd"     # fg (text)
-
-set recolor-lightcolor          "#141415"     # bg (Background)
-set recolor-darkcolor           "#cdcdcd"     # fg (Foreground)
+set recolor true
+set recolor-lightcolor "#141415"
+set recolor-darkcolor "#cdcdcd"
 
 set adjust-open width
 set recolor true

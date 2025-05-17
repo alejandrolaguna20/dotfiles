@@ -1,4 +1,3 @@
--- Conform.nvim configuration
 return {
 	"stevearc/conform.nvim",
 	event = { "BufWritePre" },

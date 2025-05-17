@@ -1,6 +1,3 @@
--- Plugin management with lazy.nvim
-
--- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -11,40 +8,33 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Plugin specifications
 require("lazy").setup({
-	-- Simple plugins without extra configuration
-	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
-	"junegunn/goyo.vim", -- Distraction-free mode
-	"preservim/vim-markdown", -- Markdown highlighting
-	"dhruvasagar/vim-table-mode", -- Tables in Markdown
+	"tpope/vim-sleuth",
+	"junegunn/goyo.vim",
+	"preservim/vim-markdown",
+	"dhruvasagar/vim-table-mode",
 	"xiyaowong/transparent.nvim",
 	"jwalton512/vim-blade",
 	"Bilal2453/luvit-meta",
-
-	-- Plugins with simple inline configuration
+	"hiphish/rainbow-delimiters.nvim",
 	{
 		"norcalli/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup({
-				"*", -- Apply to all files
-				css = { rgb_fn = true }, -- Enable `rgb()` functions for CSS
-				html = { mode = "foreground" }, -- Use foreground mode for HTML
+				"*",
+				css = { rgb_fn = true },
+				html = { mode = "foreground" },
 			})
 		end,
 	},
-	-- this is a local plugin i am developing, why doesnt it work?
 	{
-		dir = vim.fn.expand("~/.config/nvim/lua/nook"), -- Expanding the path correctly
+		dir = vim.fn.expand("~/.config/nvim/lua/nook"),
 		name = "nook",
 		config = function()
-			-- Make sure the plugin is set up when loaded
 			require("nook").setup()
 		end,
-		lazy = false, -- Load eagerly when Neovim starts
+		lazy = false,
 	},
-
-	-- Plugins with more complex configuration in separate files
 	{ import = "plugins.presence" },
 	{ import = "plugins.gitsigns" },
 	{ import = "plugins.which_key" },

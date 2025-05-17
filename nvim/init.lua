@@ -9,6 +9,7 @@ require("keymaps")
 require("autocmds")
 require("plugins")
 require("notes")
+require("typst")
 
 -- Set colorscheme
 vim.cmd("colorscheme vague")
