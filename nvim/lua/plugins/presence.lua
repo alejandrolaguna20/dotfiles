@@ -7,7 +7,7 @@ return {
 			log_level = vim.log.levels.OFF,
 			editor = {
 				client = "neovim",
-				tooltip = "Neovim",
+				tooltip = "neovim",
 				icon = nil,
 			},
 			display = {
@@ -28,7 +28,7 @@ return {
 				ignore_focus = true,
 				unidle_on_focus = true,
 				smart_idle = true,
-				details = "Forgot to close the editor",
+				details = "Idling",
 				state = nil,
 				tooltip = "💤",
 				icon = nil,
@@ -36,46 +36,46 @@ return {
 			text = {
 				default = nil,
 				workspace = function(opts)
-					return "in one of my repos"
+					return "in " .. opts.workspace
 				end,
 				viewing = function(opts)
-					return "viewing something interesting"
+					return "viewing " .. opts.filename
 				end,
 				editing = function(opts)
-					return "editing something complicated"
+					return "editing " .. opts.filename
 				end,
 				file_browser = function(opts)
-					return "browsing files somewhere"
+					return "browsing files in " .. opts.name
 				end,
 				plugin_manager = function(opts)
-					return "managing my cool config"
+					return "managing plugins in " .. opts.name
 				end,
 				lsp = function(opts)
-					return "configuring LSPs as can't code without them"
+					return "configuring LSP in " .. opts.name
 				end,
 				docs = function(opts)
-					return "reading some boring file"
+					return "reading " .. opts.name
 				end,
 				vcs = function(opts)
-					return "committing changes"
+					return "committing changes in " .. opts.name
 				end,
 				notes = function(opts)
-					return "taking notes"
+					return "taking notes in " .. opts.name
 				end,
 				debug = function(opts)
-					return "debugging"
+					return "debugging in " .. opts.name
 				end,
 				test = function(opts)
-					return "testing"
+					return "testing in " .. opts.name
 				end,
 				diagnostics = function(opts)
-					return "fixing problems :("
+					return "fixing problems in " .. opts.name
 				end,
 				games = function(opts)
-					return "playing"
+					return "playing " .. opts.name
 				end,
 				terminal = function(opts)
-					return "running commands"
+					return "running commands in " .. opts.name
 				end,
 				dashboard = "home",
 			},

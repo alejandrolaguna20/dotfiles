@@ -32,3 +32,10 @@ vim.opt.inccommand = "split"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+vim.diagnostic.config({
+	signs = true,
+	virtual_text = true,
+	update_in_insert = false,
+	severity_sort = true,
+})

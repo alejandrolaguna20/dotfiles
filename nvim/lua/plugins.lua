@@ -45,7 +45,6 @@ require("lazy").setup({
 	{ import = "plugins.cmp" },
 	{ import = "plugins.colorscheme" },
 	{ import = "plugins.todo_comments" },
-	{ import = "plugins.mini" },
 	{ import = "plugins.treesitter" },
 	{ import = "plugins.startup" },
 }, {
