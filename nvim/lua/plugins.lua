@@ -27,14 +27,6 @@ require("lazy").setup({
 			})
 		end,
 	},
-	{
-		dir = vim.fn.expand("~/.config/nvim/lua/nook"),
-		name = "nook",
-		config = function()
-			require("nook").setup()
-		end,
-		lazy = false,
-	},
 	{ import = "plugins.presence" },
 	{ import = "plugins.gitsigns" },
 	{ import = "plugins.which_key" },

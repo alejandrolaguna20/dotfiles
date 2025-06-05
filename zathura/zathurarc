@@ -35,3 +35,8 @@ set render-loading-fg		      "#c9c7cd"
 set highlight-color		        "#313134"
 set highlight-fg              "#e29eca"
 set highlight-active-color	  "#e29eca"
+
+set window-title-basename "true"
+set selection-clipboard "clipboard"
+set adjust-open width
+set recolor true
