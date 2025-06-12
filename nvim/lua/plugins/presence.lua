@@ -22,7 +22,7 @@ return {
 				reset_on_change = false,
 			},
 			idle = {
-				enabled = true,
+				enabled = false,
 				timeout = 300000,
 				show_status = true,
 				ignore_focus = true,
