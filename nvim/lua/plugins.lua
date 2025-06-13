@@ -30,6 +30,7 @@ require("lazy").setup({
 	{ import = "plugins.presence" },
 	{ import = "plugins.gitsigns" },
 	{ import = "plugins.which_key" },
+	{ import = "plugins.obsidian" },
 	{ import = "plugins.telescope" },
 	{ import = "plugins.lazydev" },
 	{ import = "plugins.lsp" },
