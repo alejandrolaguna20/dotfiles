@@ -12,4 +12,4 @@ require("notes")
 require("typst")
 
 -- Set colorscheme
-vim.cmd("colorscheme oldworld")
+vim.cmd("colorscheme kanso-zen")

@@ -1,5 +1,5 @@
 return {
-	"dgox16/oldworld.nvim",
+	"webhooked/kanso.nvim",
 	lazy = false,
 	priority = 1000,
 }
