@@ -1,0 +1,40 @@
+[colors.primary]
+background = "#161616"
+foreground = "#dde1e6"
+
+[colors.cursor]
+text = "#393939"
+cursor = "#f2f4f8"
+
+[colors.selection]
+text = "#f2f4f8"
+background = "#525252"
+
+[colors.normal]
+black   = "#262626"
+red     = "#ff7eb6"
+green   = "#42be65"
+yellow  = "#82cfff"
+blue    = "#33b1ff"
+magenta = "#ee5396"
+cyan    = "#3ddbd9"
+white   = "#dde1e6"
+
+[colors.bright]
+black   = "#393939"
+red     = "#ff7eb6"
+green   = "#42be65"
+yellow  = "#82cfff"
+blue    = "#33b1ff"
+magenta = "#ee5396"
+cyan    = "#3ddbd9"
+white   = "#ffffff"
+
+[font]
+# Ensures the IosevkaTerm Nerd Font Mono is used, no auto bold/italic guessing
+normal = { family = "IosevkaTerm Nerd Font Mono", style = "SemiBold" }
+bold   = { family = "IosevkaTerm Nerd Font Mono", style = "Bold" }
+italic = { family = "IosevkaTerm Nerd Font Mono", style = "Italic" }
+bold_italic = { family = "IosevkaTerm Nerd Font Mono", style = "Bold Italic" }
+size = 11.0
+
