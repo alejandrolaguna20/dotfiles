@@ -17,7 +17,6 @@ require("lazy").setup({
 	"xiyaowong/transparent.nvim",
 	"jwalton512/vim-blade",
 	"Bilal2453/luvit-meta",
-	"hiphish/rainbow-delimiters.nvim",
 	{
 		"norcalli/nvim-colorizer.lua",
 		config = function()
@@ -27,6 +26,11 @@ require("lazy").setup({
 				html = { mode = "foreground" },
 			})
 		end,
+	},
+	{
+		"NStefan002/screenkey.nvim",
+		lazy = false,
+		version = "*", -- or branch = "main", to use the latest commit
 	},
 	{ import = "plugins.presence" },
 	{ import = "plugins.gitsigns" },

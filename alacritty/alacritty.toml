@@ -1,34 +1,72 @@
 [colors.primary]
-background = "#161616"
-foreground = "#dde1e6"
+background = "#161617"
+foreground = "#c9c7cd"
 
 [colors.cursor]
-text = "#393939"
-cursor = "#f2f4f8"
+text = "#161617"
+cursor = "#c9c7cd"
+
+[colors.vi_mode_cursor]
+text = "#161617"
+cursor = "#c9c7cd"
 
 [colors.selection]
-text = "#f2f4f8"
-background = "#525252"
+text = "CellForeground"
+background = "#353539"
+
+[colors.search.matches]
+foreground = "#161617"
+background = "#e6b99d"
+
+[colors.search.focused_match]
+foreground = "#161617"
+background = "#f0c5a9"
+
+[colors.footer_bar]
+background = "#27272a"
+foreground = "#c9c7cd"
+
+[colors.hints.start]
+foreground = "#161617"
+background = "#e6b99d"
+
+[colors.hints.end]
+foreground = "#161617"
+background = "#27272a"
+
+[colors.line_indicator]
+foreground = "None"
+background = "None"
 
 [colors.normal]
-black   = "#262626"
-red     = "#ff7eb6"
-green   = "#42be65"
-yellow  = "#82cfff"
-blue    = "#33b1ff"
-magenta = "#ee5396"
-cyan    = "#3ddbd9"
-white   = "#dde1e6"
+black = "#27272a"
+red = "#f5a191"
+green = "#90b99f"
+yellow = "#e6b99d"
+blue = "#aca1cf"
+magenta = "#e29eca"
+cyan = "#ea83a5"
+white = "#c1c0d4"
 
 [colors.bright]
-black   = "#393939"
-red     = "#ff7eb6"
-green   = "#42be65"
-yellow  = "#82cfff"
-blue    = "#33b1ff"
-magenta = "#ee5396"
-cyan    = "#3ddbd9"
-white   = "#ffffff"
+black = "#353539"
+red = "#ffae9f"
+green = "#9dc6ac"
+yellow = "#f0c5a9"
+blue = "#b9aeda"
+magenta = "#ecaad6"
+cyan = "#f591b2"
+white = "#cac9dd"
+
+[colors.dim]
+black = "#2a2a2d"
+red = "#e29eca"
+green = "#757581"
+yellow = "#c1c0d4"
+blue = "#9998a8"
+magenta = "#d55488"
+cyan = "#bf386e"
+white = "#9998a8"
 
 [font]
 # Ensures the IosevkaTerm Nerd Font Mono is used, no auto bold/italic guessing
