@@ -17,16 +17,17 @@ require("lazy").setup({
 	"xiyaowong/transparent.nvim",
 	"jwalton512/vim-blade",
 	"Bilal2453/luvit-meta",
-	{
-		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup({
-				"*",
-				css = { rgb_fn = true },
-				html = { mode = "foreground" },
-			})
-		end,
-	},
+	"JuliaEditorSupport/julia-vim",
+	--	{
+	--		"norcalli/nvim-colorizer.lua",
+	--		config = function()
+	--			require("colorizer").setup({
+	--				"*",
+	--				css = { rgb_fn = true },
+	--				html = { mode = "foreground" },
+	--			})
+	--		end,
+	--	},
 	{
 		"NStefan002/screenkey.nvim",
 		lazy = false,
@@ -35,7 +36,6 @@ require("lazy").setup({
 	{ import = "plugins.presence" },
 	{ import = "plugins.gitsigns" },
 	{ import = "plugins.which_key" },
-	{ import = "plugins.obsidian" },
 	{ import = "plugins.telescope" },
 	{ import = "plugins.lazydev" },
 	{ import = "plugins.lsp" },
@@ -44,7 +44,7 @@ require("lazy").setup({
 	{ import = "plugins.colorscheme" },
 	{ import = "plugins.todo_comments" },
 	{ import = "plugins.treesitter" },
-	{ import = "plugins.startup" },
+	{ import = "plugins.latex" },
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {

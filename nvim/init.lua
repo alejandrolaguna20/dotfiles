@@ -10,5 +10,4 @@ require("autocmds")
 require("plugins")
 require("notes")
 
--- Set colorscheme
-vim.cmd("colorscheme mellow")
+vim.cmd("colorscheme lake-dweller")

@@ -8,6 +8,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	config = function()
+		-- LSP attach keymaps
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
 			callback = function(event)
@@ -15,6 +16,7 @@ return {
 					mode = mode or "n"
 					vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 				end
+
 				map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
 				map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
 				map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
@@ -26,6 +28,8 @@ return {
 				map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 				local client = vim.lsp.get_client_by_id(event.data.client_id)
+
+				-- Document highlighting
 				if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
 					local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
 					vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -33,13 +37,11 @@ return {
 						group = highlight_augroup,
 						callback = vim.lsp.buf.document_highlight,
 					})
-
 					vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
 						buffer = event.buf,
 						group = highlight_augroup,
 						callback = vim.lsp.buf.clear_references,
 					})
-
 					vim.api.nvim_create_autocmd("LspDetach", {
 						group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
 						callback = function(event2)
@@ -49,6 +51,7 @@ return {
 					})
 				end
 
+				-- Inlay hints
 				if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
 					map("<leader>th", function()
 						vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
@@ -57,36 +60,99 @@ return {
 			end,
 		})
 
+		-- LSP capabilities (for nvim-cmp)
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
+		-- Define LSP servers and settings
 		local servers = {
 			lua_ls = {
 				settings = {
 					Lua = {
-						completion = {
-							callSnippet = "Replace",
+						completion = { callSnippet = "Replace" },
+					},
+				},
+			},
+
+			texlab = {
+				settings = {
+					texlab = {
+						build = {
+							executable = "latexmk",
+							args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+							onSave = true,
+						},
+						forwardSearch = {
+							executable = "zathura",
+							args = { "--synctex-forward", "%l:1:%f", "%p" },
+						},
+						chktex = {
+							onOpenAndSave = true,
+							onEdit = false,
 						},
 					},
 				},
 			},
+
+			-- 👇 Add HLS configuration here
+			hls = {
+				settings = {
+					haskell = {
+						formattingProvider = "fourmolu", -- or "ormolu", "stylish-haskell"
+						-- Check hie.yaml for project configuration
+						checkProject = true,
+						-- Enable diagnostics
+						diagnosticsOnChange = true,
+						-- Completion snippets
+						completionSnippetsOn = true,
+						-- Maximum number of completion items
+						maxCompletions = 40,
+					},
+				},
+				-- HLS might need specific filetypes
+				filetypes = { "haskell", "lhaskell", "cabal" },
+			},
 		}
 
+		-- Mason setup
 		require("mason").setup()
+
+		-- Ensure servers + formatters installed (EXCLUDE julials from this list)
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua",
+			"haskell-language-server", -- 👈 Add HLS to mason installer
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
+		-- Setup mason-lspconfig handlers with julials disabled
 		require("mason-lspconfig").setup({
 			handlers = {
+				-- Disable Mason's julials server completely
+				["julials"] = function() end,
+
+				-- Default handler for other servers
 				function(server_name)
 					local server = servers[server_name] or {}
 					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-					require("lspconfig")[server_name].setup(server)
+					-- Use the new vim.lsp.config API
+					vim.lsp.config(server_name, server)
 				end,
 			},
+		})
+
+		-- Configure Julia LSP manually using the new API
+		-- This should be done AFTER mason-lspconfig setup to ensure it overrides
+		vim.lsp.config("julials", {
+			cmd = {
+				"julia",
+				"--startup-file=no",
+				"--history-file=no",
+				"-e",
+				"using LanguageServer, SymbolServer; runserver()",
+			},
+			filetypes = { "julia" },
+			capabilities = capabilities,
 		})
 	end,
 }
