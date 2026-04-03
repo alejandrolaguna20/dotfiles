@@ -12,7 +12,7 @@ return {
 			},
 			display = {
 				theme = "atom",
-				flavor = "dark",
+				flavor = "accent",
 				swap_fields = false,
 				swap_icons = false,
 			},
