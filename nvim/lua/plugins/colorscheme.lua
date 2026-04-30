@@ -1,19 +1,13 @@
 return {
-	"datsfilipe/vesper.nvim",
+	"Mofiqul/adwaita.nvim",
 	lazy = false,
 	priority = 1000,
+
+	-- configure and set on startup
 	config = function()
-		require("vesper").setup({
-			transparent = false, -- boolean: sets the background to transparent
-			italics = {
-				comments = true, -- boolean: italicizes comments
-				keywords = false, -- boolean: italicizes keywords
-				functions = false, -- boolean: italicizes functions
-				strings = true, -- boolean: italicizes strings
-				variables = false, -- boolean: italicizes variables
-			},
-			overrides = {}, -- a dictionary of group names, can be a function returning a dictionary or a table.
-			palette_overrides = {},
-		})
+		vim.g.adwaita_darker = false -- for darker version
+		vim.g.adwaita_disable_cursorline = false -- to disable cursorline
+		vim.g.adwaita_transparent = false -- makes the background transparent
+		vim.cmd("colorscheme adwaita")
 	end,
 }

@@ -9,5 +9,3 @@ require("keymaps")
 require("autocmds")
 require("plugins")
 require("notes")
-
-vim.cmd("colorscheme vesper")

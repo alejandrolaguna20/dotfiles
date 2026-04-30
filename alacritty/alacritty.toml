@@ -1,5 +1,6 @@
 [window]
 padding = { x = 2, y = 2 }
+startup_mode = "Maximized"
 
 [font]
 normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }
@@ -17,28 +18,54 @@ unfocused_hollow = false
 history = 5000
 
 [colors.primary]
-background = '#101010'
-foreground = '#ffffff'
+background = "#1D1D20"   # libadwaita_dark
+foreground = "#F6F5F4"   # light_3
+
+[colors.cursor]
+text = "#1D1D20"
+cursor = "#FCFCFC"
+
+[colors.selection]
+text = "#FFFFFF"
+background = "#4A4A4D"   # menu_selected
 
 [colors.normal]
-black   = '#101010'
-red     = '#f5a191'
-green   = '#90b99f'
-yellow  = '#e6b99d'
-blue    = '#aca1cf'
-magenta = '#e29eca'
-cyan    = '#ea83a5'
-white   = '#a0a0a0'
+black   = "#242424"      # dark_5
+red     = "#ED333B"      # red_2
+green   = "#33D17A"      # green_3
+yellow  = "#F6D32D"      # yellow_3
+blue    = "#3584E4"      # blue_3
+magenta = "#C061CB"      # purple_2
+cyan    = "#33B2A4"      # teal_3
+white   = "#DEDDDA"      # light_4
 
 [colors.bright]
-black   = '#7e7e7e'
-red     = '#ff8080'
-green   = '#99ffe4'
-yellow  = '#ffc799'
-blue    = '#b9aeda'
-magenta = '#ecaad6'
-cyan    = '#f591b2'
-white   = '#ffffff'
+black   = "#5E5E5E"      # dark_2
+red     = "#F66151"      # red_1
+green   = "#57E389"      # green_2
+yellow  = "#F9F06B"      # yellow_1
+blue    = "#62A0EA"      # blue_2
+magenta = "#DC8ADD"      # purple_1
+cyan    = "#5BC8AF"      # teal_2
+white   = "#FFFFFF"      # light_1
+
+[colors.dim]
+black   = "#121212"      # dark_6
+red     = "#C01C28"      # red_4
+green   = "#26A269"      # green_5
+yellow  = "#E5A50A"      # yellow_5
+blue    = "#1C71D8"      # blue_4
+magenta = "#9141AC"      # purple_3
+cyan    = "#218787"      # teal_5
+white   = "#B0AFAC"      # light_6
+
+[[colors.indexed_colors]]
+index = 16
+color = "#FF7800"        # orange_3
+
+[[colors.indexed_colors]]
+index = 17
+color = "#CDAB8F"        # brown_1
 
 [bell]
 animation = "Linear"

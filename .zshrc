@@ -1,12 +1,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-
 ZSH_THEME=""
-
 
 setopt PROMPT_SUBST
 
-# Save last exit code BEFORE running anything else
 precmd() {
   LAST_EXIT_CODE=$?
 }
@@ -14,13 +11,16 @@ precmd() {
 git_branch() {
   local branch
   branch=$(git branch --show-current 2>/dev/null)
-  [[ -n $branch ]] && echo " %F{yellow}git:(%F{green}${branch}%F{yellow})%f"
+  [[ -n $branch ]] && echo " %F{#62A0EA}${branch}%f"
 }
 
-PROMPT='${LAST_EXIT_CODE} %F{8}${USER}:%F{red}%1~%f$(git_branch) %% '
+exit_status() {
+  echo "%F{#A0A0A0}${LAST_EXIT_CODE}%f "
+}
 
+PROMPT='$(exit_status)%F{#33B2A4}%1~%f$(git_branch) %F{#5E5E5E}%%%f '
 
-plugins=(
+  plugins=(
   git
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -45,5 +45,7 @@ export NVM_DIR="$HOME/.nvm"
 . "$HOME/.cargo/env"
 
 [ -f "/home/alex/.ghcup/env" ] && . "/home/alex/.ghcup/env" # ghcup-env
-
+export CPLUS_INCLUDE_PATH="/opt/sfml2/include:$CPLUS_INCLUDE_PATH"
+export LIBRARY_PATH="/opt/sfml2/lib:$LIBRARY_PATH"
+export LD_LIBRARY_PATH="/opt/sfml2/lib:$LD_LIBRARY_PATH"
 export PATH="$PATH:/home/alex/.local/bin"
