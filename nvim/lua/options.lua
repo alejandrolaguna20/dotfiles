@@ -41,3 +41,13 @@ vim.diagnostic.config({
 })
 
 vim.opt.conceallevel = 1
+
+local original_ts_start = vim.treesitter.start
+vim.treesitter.start = function(bufnr, lang)
+	local buf = bufnr or vim.api.nvim_get_current_buf()
+	local ft = lang or vim.bo[buf].filetype
+	if ft == "markdown" or ft == "markdown_inline" then
+		return false
+	end
+	return original_ts_start(bufnr, lang)
+end

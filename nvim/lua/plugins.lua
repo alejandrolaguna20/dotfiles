@@ -12,7 +12,14 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	"tpope/vim-sleuth",
 	"folke/zen-mode.nvim",
-	"preservim/vim-markdown",
+	{
+		"preservim/vim-markdown",
+		dependencies = { "godlygeek/tabular" },
+		init = function()
+			vim.g.vim_markdown_folding_disabled = 1
+			vim.g.vim_markdown_no_default_key_mappings = 1
+		end,
+	},
 	"dhruvasagar/vim-table-mode",
 	"xiyaowong/transparent.nvim",
 	"jwalton512/vim-blade",

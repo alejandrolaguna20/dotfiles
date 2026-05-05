@@ -15,14 +15,25 @@ return {
 			"python",
 			"c",
 			"cpp",
-			"markdown",
-			"markdown_inline",
 			"csv",
 			"json",
 		},
-		auto_install = true,
-		highlight = { enable = true },
-		indent = { enable = true },
+		ignore_install = { "markdown", "markdown_inline" },
+		auto_install = false,
+		highlight = {
+			enable = true,
+			-- Disable treesitter for markdown to prevent crashes
+			disable = { "markdown", "markdown_inline" },
+			additional_vim_regex_highlighting = { "markdown" },
+		},
+
+		indent = {
+			enable = true,
+			disable = { "markdown", "markdown_inline" },
+		},
+		injections = {
+			enable = false,
+		},
 	},
 	-- Fallback config to handle edge cases
 	config = function(_, opts)
