@@ -23,7 +23,7 @@ return {
 		highlight = {
 			enable = true,
 			-- Disable treesitter for markdown to prevent crashes
-			disable = { "markdown", "markdown_inline" },
+			disable = { "markdown", "markdown_inline", "bash" },
 			additional_vim_regex_highlighting = { "markdown" },
 		},
 

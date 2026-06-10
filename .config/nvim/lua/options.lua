@@ -42,6 +42,8 @@ vim.diagnostic.config({
 
 vim.opt.conceallevel = 1
 
+-- Failsafe: Completely block treesitter from starting on markdown
+-- This prevents crashes in Neovim 0.12+ hovers/files
 local original_ts_start = vim.treesitter.start
 vim.treesitter.start = function(bufnr, lang)
 	local buf = bufnr or vim.api.nvim_get_current_buf()
