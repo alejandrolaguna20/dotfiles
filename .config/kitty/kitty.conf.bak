@@ -1,24 +1,17 @@
+include /home/alex/.config/kitty/kitty.falcon.conf
 # BEGIN_KITTY_FONTS
-font_family      family="FiraCode Nerd Font Mono"
+font_family      family="IosevkaTerm Nerd Font Mono"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
 # END_KITTY_FONTS
 
 disable_ligatures always
-font_size 11
+font_size 12
 # adjust_column_width 1
-
-cursor #f0f0f0
-cursor_text_color #ffffff
-cursor_shape block
-
-cursor_blink_interval 0.5
-cursor_stop_blinking_after 0
 
 scrollback_lines 5000
 
-url_color #0f0f0f
 url_style single
 
 repaint_delay 10
@@ -32,31 +25,4 @@ remember_window_size no
 
 window_padding_width 2.0
 
-background            #0e0e16
-foreground            #d8d8d8
 
-cursor                #d8d8d8
-cursor_text_color     #0e0e16
-
-selection_background  #858d95
-selection_foreground  #0e0e16
-
-color0   #0e0e16
-color1   #ef8a90
-color2   #8ac490
-color3   #d58ca6
-color4   #b0c0e0
-color5   #d58ca6
-color6   #70a8a8
-color7   #d8d8d8
-
-color8   #858d95
-color9   #ef8a90
-color10  #8ac490
-color11  #d58ca6
-color12  #b0c0e0
-color13  #d58ca6
-color14  #70a8a8
-color15  #ffffff
-
-url_color #b0c0e0

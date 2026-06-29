@@ -181,12 +181,21 @@ return {
 
 		require("mason").setup()
 
-		local ensure_installed = vim.tbl_keys(servers)
+		-- Mason names for servers in the `servers` table
+		local server_to_mason = {
+			lua_ls = "lua-language-server",
+			texlab = "texlab",
+			zls = "zls",
+			hls = "haskell-language-server",
+		}
+
+		local ensure_installed = {}
+		for server_name, _ in pairs(servers) do
+			table.insert(ensure_installed, server_to_mason[server_name] or server_name)
+		end
 
 		vim.list_extend(ensure_installed, {
 			"stylua",
-			"zls",
-			"haskell-language-server",
 		})
 
 		require("mason-tool-installer").setup({
@@ -199,18 +208,20 @@ return {
 
 		require("mason-lspconfig").setup({
 			handlers = {
+				-- Skip julials here as it is handled manually
 				["julials"] = function() end,
 
+				-- Default handler for all other servers
 				function(server_name)
-					local server = servers[server_name] or {}
+					local server_opts = servers[server_name] or {}
 
-					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+					-- Merge capabilities
+					server_opts.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server_opts.capabilities or {})
 
-					-- IMPORTANT:
-					-- config() defines
-					-- enable() starts/attaches
-
-					vim.lsp.config(server_name, server)
+					-- Use new Neovim 0.11+ APIs:
+					-- config() defines/extends the configuration
+					-- enable() starts/attaches based on filetype and root detection
+					vim.lsp.config(server_name, server_opts)
 					vim.lsp.enable(server_name)
 				end,
 			},

@@ -1,8 +1,8 @@
 return {
-	"marekh19/meowsoot.nvim",
+	"fenetikm/falcon",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd.colorscheme("meowsoot")
+		vim.cmd.colorscheme("falcon")
 	end,
 }

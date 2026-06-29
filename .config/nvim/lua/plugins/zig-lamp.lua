@@ -5,8 +5,6 @@ return {
 	build = ":ZigLampBuild async",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		-- For Neovim < 0.11 you’ll likely want lspconfig
-		"neovim/nvim-lspconfig",
 	},
 	init = function()
 		-- Backward-compatible global vars (all optional)

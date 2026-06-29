@@ -1,0 +1,57 @@
+{
+  "layer": "bottom",
+  "position": "bottom",
+
+  "modules-left": [
+    "sway/workspaces"
+  ],
+
+  "modules-center": [],
+
+  "modules-right": [
+    "cpu",
+    "load",
+    "memory",            // ← added RAM
+    "pulseaudio",
+    "network",
+    "battery",
+    "clock"
+  ],
+
+  "clock": {
+    "format": "{:%Y-%m-%d %H:%M}"
+  },
+
+  "cpu": {
+    "format": "cpu {usage}%"
+  },
+
+  "load": {
+    "format": "load {load1}"
+  },
+
+  "memory": {
+    "format": "ram {percentage}%"   // or {used}/{total} if you prefer
+  },
+
+  "battery": {
+    "format": "{capacity}%",
+    "format-charging": "bat {capacity}%",
+    "format-discharging": "bat {capacity}%",
+    "states": {
+      "warning": 30,
+      "critical": 10
+    }
+  },
+
+  "network": {
+    "format-wifi": "wifi {essid} {signalStrength}%",
+    "format-ethernet": "eth {ipaddr}",
+    "format-disconnected": "off"
+  },
+
+  "pulseaudio": {
+    "format": "vol {volume}%",
+    "format-muted": "vol muted"
+  }
+}

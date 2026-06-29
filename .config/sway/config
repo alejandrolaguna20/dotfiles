@@ -1,13 +1,18 @@
 set $mod Mod4
-font pango:Maple Mono 11
+font pango:IosevkaTerm Nerd Font Mono 11
 
 exec --no-startup-id dex --autostart --environment sway
+exec systemctl --user import-environment XDG_CURRENT_DESKTOP WAYLAND_DISPLAY
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+# Start the wlr portal backend
+exec /usr/lib/xdg-desktop-portal-wlr &
+# Start the main portal
+exec /usr/lib/xdg-desktop-portal &
 
 exec swayidle -w \
     timeout 900 '~/.config/sway/lock.sh' \
     before-sleep '~/.config/sway/lock.sh'
 
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
@@ -19,7 +24,7 @@ bindsym $mod+Return exec kitty
 
 bindsym $mod+Shift+x exec ~/.config/sway/lock.sh
 
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 bindsym $mod+d exec fuzzel
 
@@ -108,10 +113,8 @@ bindsym $mod+r mode "resize"
 set $bg         #111111
 set $surface    #161616
 set $accent_bg  #1B1B1B
-
 set $fg         #e1e1e1
 set $dim        #8a8a8a
-
 set $pink       #eaa4c9
 set $lavender   #cca6e7
 set $cyan       #96d8e3
@@ -120,7 +123,7 @@ set $blue       #96bddf
 set $yellow     #dfd286
 
 # class                 border      backgr.     text        indicator    child_border
-client.focused          $cyan       $accent_bg  $fg         $cyan        $cyan
+client.focused          $dim        $accent_bg  $fg         $cyan        $dim
 client.focused_inactive $surface    $surface    $dim        $surface     $surface
 client.unfocused        $bg         $bg         $dim        $bg          $bg
 client.urgent           $pink       $pink       $bg         $pink        $pink
@@ -135,6 +138,6 @@ exec_always waybar
 
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
-bindsym Print exec grim -g "$(slurp)" ~/Pictures/screenshots/$(date +%F_%H-%M-%S).png
+bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/Pictures/screenshots/$(date +%F_%H-%M-%S).png
 exec_always ~/my_scripts/random_wallpaper.sh
 xwayland enable

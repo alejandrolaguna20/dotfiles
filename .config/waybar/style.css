@@ -1,0 +1,39 @@
+* {
+  font-family: "IosevkaTerm Nerd Font Mono";
+  font-size: 12px;
+}
+
+window#waybar {
+  background: #111111;
+  color: #b4b4b9;               /* Falcon foreground */
+}
+
+/* LEFT: workspaces */
+#workspaces {
+  margin-left: 8px;
+}
+
+#workspaces button {
+  padding: 0 6px;
+  color: #6A6A6A;
+  background: transparent;
+}
+
+#workspaces button.focused {
+  color: #DADADA;
+  background: #1B1B1B;
+}
+
+#workspaces button.urgent {
+  color: #ff6b6b;
+}
+
+/* RIGHT cluster */
+.modules-right {
+  margin-left: 0px;
+  margin-right: 8px;
+}
+
+#cpu, #load, #pulseaudio, #network, #battery, #clock {
+  padding: 0 10px;
+}
