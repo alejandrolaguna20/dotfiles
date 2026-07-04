@@ -140,4 +140,5 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/Pictures/screenshots/$(date +%F_%H-%M-%S).png
 exec_always ~/my_scripts/random_wallpaper.sh
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 xwayland enable
